@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+</body>
+
+
+<script>
+    // 授权地址
+    var url = "http://localhost:8080/oauth/authorize?client_id=client-a&redirect_uri=http://localhost:8080/auto&response_type=token&scope=read_user_info";
+    // 创建浮层 iframe 用于展示授权登录窗口
+    $('body').append("<div height='500px' width='500px' style='border:1px red solid;'>"+
+        "<iframe id='login'  height='500px' width='500px' src='"+url+"'"
+    +
+    "</div>");
+    // 监听成功后，返回的信息
+    window.addEventListener('message', function(e) {
+        // 获取登录token ，并缓存token
+        var callbackUrl = e.data;
+        alert("父页面获取信息："+e.data)
+    })
+</script>
+
+</html>

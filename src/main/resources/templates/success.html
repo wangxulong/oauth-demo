@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+login success
+</body>
+<script>
+    alert("子页面"+window.location.href);
+    // todo 本页面完成token解析
+    window.parent.postMessage(window.location.href,'*');
+</script>
+</html>
