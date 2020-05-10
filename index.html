@@ -12,7 +12,8 @@
 
 <script>
     // 授权地址
-    var url = "http://localhost:8080/oauth/authorize?client_id=client-a&redirect_uri=http://localhost:8080/auto&response_type=token&scope=read_user_info";
+    var url = "http://localhost:8080/oauth/authorize?client_id=client-a" +
+        "&redirect_uri=http://localhost:8080/auto&response_type=token&scope=read_user_info";
     // 创建浮层 iframe 用于展示授权登录窗口
     $('body').append("<div height='500px' width='500px' style='border:1px red solid;'>"+
         "<iframe id='login'  height='500px' width='500px' src='"+url+"'"
